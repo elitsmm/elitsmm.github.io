@@ -1,9 +1,9 @@
 (function(){
-    const englishInput = document.getElementById('englishInput');
+    const portuguêsInput = document.getElementById('portuguêsInput');
     const cactobetoInput = document.getElementById('CactobetoInput');
     const input = document.getElementsByClassName('input');
     const output = document.getElementsByClassName('output');
-    const translate = document.getElementById('translate');
+    const traduzir = document.getElementById('traduzir');
     const revert = document.getElementById('revert');
     const alphabet = {
         'a': 'y', 'A': 'Y', 
@@ -41,11 +41,11 @@
     console.log(alphabetCactobeto);
 
     revert.addEventListener('click', function(e) {
-        translate.classList.toggle('translateToCactobeto');
-        translate.classList.toggle('translateToEnglish');
-        englishInput.classList.toggle('input');
+        traduzir.classList.toggle('tranduzirToCactobeto');
+        traduzir.classList.toggle('traduzirToEnglish');
+        portuguêsInput.classList.toggle('input');
         CactobetoInput.classList.toggle('output');
-        englishInput.classList.toggle('output');
+        portuguêsInput.classList.toggle('output');
         CactobetoInput.classList.toggle('input');
         revert.classList.toggle('revert');
 
@@ -53,21 +53,21 @@
     });
 
     translate.addEventListener('click', function(e) {
-        if(translate.className === 'translateToCactobeto') {
+        if(translate.className === 'traduzirToCactobeto') {
             console.log('>>>');
-            const english = input[0].value;
-            const Cactobeto = english.replaceAll(/([A-Za-z])/g, function (m) {
+            const português = input[0].value;
+            const Cactobeto = português.replaceAll(/([A-Za-z])/g, function (m) {
                 return alphabet[m];
             });
             output[0].value = Cactobeto;
         } 
-        else if(translate.className === 'translateToEnglish') {
+        else if(traduzir.className === 'tranduzirToEnglish') {
             console.log('<<<');
             const Cactobeto = input[0].value;
-            const english = Cactobeto.replaceAll(/([A-Za-z])/g, function (m) {
+            const português = Cactobeto.replaceAll(/([A-Za-z])/g, function (m) {
                 return alphabetCactobeto[m];
             });
-            output[0].value = english;
+            output[0].value = português;
         }
         e.preventDefault();
     });
