@@ -56,7 +56,7 @@
         if(translate.className === 'translateToCactobeto') {
             console.log('>>>');
             const português = input[0].value;
-            const Cactobeto = portuguê.replaceAll(/([A-Za-z])/g, function (m) {
+            const Cactobeto = português.replaceAll(/([A-Za-z])/g, function (m) {
                 return alphabet[m];
             });
             output[0].value = Cactobeto;
